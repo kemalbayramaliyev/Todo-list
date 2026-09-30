@@ -1,0 +1,124 @@
+body{
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: rgb(108, 161, 222);
+}
+
+.main-container{
+    position: relative;
+    background-color: rgb(228, 239, 249) ;
+    height: 400px;
+    width: 360px;
+    max-width: 90vw;
+    border-radius: 12px;
+}
+
+.write-input{
+    position: absolute;
+    top: 46px;
+    left: 30px;
+    width: 200px;
+    border: none;
+    border-bottom: solid 1px rgb(148, 148, 148);
+    background-color: transparent;
+    outline: none;
+    font-family: Inter;
+}
+
+.add-button{
+    position: absolute;
+    top: 36px;
+    right: 36px;
+    width: 70px;
+    height: 30px;
+    background-color: rgb(50, 133, 227);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-family: Inter;
+    font-weight: 500;
+}
+
+.how-many{
+    position: absolute;
+    font-family: Inter;
+    font-size: 15px;
+    top: 68px;
+    left: 30px;
+    display: block;
+}
+
+.task-container{
+    position: relative;
+    display: flex;
+    background-color: white;
+    margin-top: 20px;
+    width: 290px;
+    border-radius: 6px;
+}
+
+.all-tasks{
+    position: absolute;
+    left: 30px;
+    top: 106px;
+}
+
+.check-input{
+    margin-left: 13px;
+}
+
+.task-name{
+    margin-left: 6px;
+    font-family: Inter;
+    font-size: 14.5px;
+    width: 150px;
+}
+
+.edit-button{
+    position: absolute;
+    height: 36px;
+    width: 40px;
+    right: 60px;
+    top: 5px;
+    border: none;
+    background-color: rgb(108, 161, 222);
+    color: white;
+    border-radius: 6px;
+    font-family: Inter;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.edit-button:hover{
+    background-color: rgb(94, 154, 223);
+}
+
+.edit-button:active{
+    opacity: 0.9;
+}
+
+
+.delete-button{
+    position: absolute;
+    height: 36px;
+    width: 40px;
+    right: 10px;
+    top: 5px;
+    border: none;
+    background-color: rgb(229, 55, 55);
+    color: white;
+    border-radius: 6px;
+    font-family: Inter;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.delete-button:hover{
+    background-color: rgb(216, 53, 53);
+}
+
+.delete-button:active{
+    opacity: 0.9;
+}
