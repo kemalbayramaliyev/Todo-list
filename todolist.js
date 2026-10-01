@@ -6,13 +6,16 @@ const allTasks = document.querySelector('.all-tasks');
 
 const delButton = document.querySelector('.delete-button');
 
-let tasks = [];
+let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+createTask();
 
 addButton.addEventListener('click', () => {
     if (writeInput.value !== ''){
         tasks.push(writeInput.value);
         writeInput.value = '';
         createTask();
+        saveTasks();
     };
 });
 
@@ -35,5 +38,11 @@ allTasks.addEventListener('click', (event) => {
         tasks.splice(index, 1);
 
         createTask();
-    }
-})
+        saveTasks();
+    };
+});
+
+
+function saveTasks() {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+};
