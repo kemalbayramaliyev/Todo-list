@@ -12,7 +12,10 @@ createTask();
 
 addButton.addEventListener('click', () => {
     if (writeInput.value !== ''){
-        tasks.push(writeInput.value);
+        tasks.push(
+            {text: writeInput.value,
+                completed: false}
+            );
         writeInput.value = '';
         createTask();
         saveTasks();
@@ -21,14 +24,25 @@ addButton.addEventListener('click', () => {
 
 function createTask() {
     allTasks.innerHTML = '';
-    tasks.forEach((name, index) => {
+    tasks.forEach((task, index) => {
         allTasks.innerHTML += `<div class="task-container">
-            <input type="checkbox" class="check-input"></input>
-            <p class="task-name">${name}</p>
+            <input 
+            type="checkbox" 
+            class="check-input"
+            ${task.completed ? 'checked' : ''} 
+          onchange="toggleTask(${index})"
+          >
+            <p class="task-name ${task.completed ? 'completed' : ''}">${task.text}</p>
             <button class="edit-button">Edit</button>
             <button class="delete-button" data-index="${index}">Del</button>
         </div>`
     });
+}
+
+function toggleTask(index) {
+  tasks[index].completed = !tasks[index].completed;
+  saveTasks();
+  createTask();
 }
 
 allTasks.addEventListener('click', (event) => {

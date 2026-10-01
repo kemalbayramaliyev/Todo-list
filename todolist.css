@@ -122,3 +122,8 @@ body{
 .delete-button:active{
     opacity: 0.9;
 }
+
+.task-name.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
